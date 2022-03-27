@@ -15,7 +15,7 @@ main() {
   local port="9092"
   readonly port
 
-  # zookeeper.connect 설정
+  # zookeeper.connect 설정 (zookeeper 서버가 여러개일 경우 ,(쉼표)로 구분하여 입력)
   local zookeeper_connect="localhost:2181"
   readonly zookeeper_connect
 
