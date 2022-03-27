@@ -43,7 +43,7 @@ main() {
 
   pushd $target_folder
   # cp ./conf/zoo_sample.cfg ./conf/zoo.cfg # zoo_sample.cfg 파일을 zoo.cfg 파일로 복사
-  echo -e "tickTime=2000\ndataDir=/var/lib/zookeeper\nclientPort=$port\nsyncLimit=5" > ./conf/zoo.cfg
+  echo -e "tickTime=2000\ndataDir=/var/lib/zookeeper\nclientPort=$port\nsyncLimit=5\ninitLimit=5" > ./conf/zoo.cfg
   # sed -i'' -r -e "/dataDir=\/tmp\/zookeeper/c\dataDir=\/var\/lib\/zookeeper" ./conf/zoo.cfg # dataDir 경로를 /var/lib/zookeeper 로 교체
   for ((i = 0; i < ${#zookeeper_servers[@]}; i++)) ; do
     local server_id=`expr $i + 1`
