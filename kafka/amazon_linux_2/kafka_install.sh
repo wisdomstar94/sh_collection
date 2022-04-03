@@ -49,6 +49,7 @@ main() {
   sed -i'' -r -e "/\#listeners=PLAINTEXT\:\/\/\:$port/c\listeners=PLAINTEXT\:\/\/\:$port" ./config/server.properties
   sed -i'' -r -e "/\#advertised.listeners=PLAINTEXT\:\/\/your.host.name:$port/c\advertised.listeners=PLAINTEXT\:\/\/$hostname\:$port" ./config/server.properties
   sed -i'' -r -e "/zookeeper.connect=localhost\:2181/c\zookeeper.connect=$zookeeper_connect" ./config/server.properties
+  sed -i'' -r -e "/group.initial.rebalance.delay.ms\=/a\delete.topic.enable=true" ./config/server.properties
   popd
 
   # bin/kafka-server-start.sh config/server.properties
